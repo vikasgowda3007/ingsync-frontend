@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+// 1. Include core styles
+@include mat.core();
+
+// 2. Define a theme
+$my-theme: mat.define-theme((
+  color: (
+    theme-type: light
+  ),
+  typography: (
+    brand-family: 'Roboto',
+    bold-weight: 700,
+  ),
+  density: (
+    scale: 0
+  )
+));
+
+// 3. Apply the theme to all components
+:root {
+  @include mat.all-component-themes($my-theme);
+}

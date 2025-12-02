@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GlobalDashboard } from './global-dashboard';
+import { Restaurant } from './restaurant';
 
-describe('GlobalDashboard', () => {
-  let component: GlobalDashboard;
-  let fixture: ComponentFixture<GlobalDashboard>;
+describe('Restaurant', () => {
+  let component: Restaurant;
+  let fixture: ComponentFixture<Restaurant>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GlobalDashboard]
+      imports: [Restaurant]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GlobalDashboard);
+    fixture = TestBed.createComponent(Restaurant);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

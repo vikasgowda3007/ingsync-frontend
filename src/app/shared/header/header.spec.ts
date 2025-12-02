@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StoreSelector } from './store-selector';
+import { Header } from './header';
 
-describe('StoreSelector', () => {
-  let component: StoreSelector;
-  let fixture: ComponentFixture<StoreSelector>;
+describe('Header', () => {
+  let component: Header;
+  let fixture: ComponentFixture<Header>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StoreSelector]
+      imports: [Header]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(StoreSelector);
+    fixture = TestBed.createComponent(Header);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

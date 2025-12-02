@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RestockDialog } from './restock-dialog';
+import { RestaurantMenu } from './restaurant-menu';
 
-describe('RestockDialog', () => {
-  let component: RestockDialog;
-  let fixture: ComponentFixture<RestockDialog>;
+describe('RestaurantMenu', () => {
+  let component: RestaurantMenu;
+  let fixture: ComponentFixture<RestaurantMenu>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RestockDialog]
+      imports: [RestaurantMenu]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RestockDialog);
+    fixture = TestBed.createComponent(RestaurantMenu);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

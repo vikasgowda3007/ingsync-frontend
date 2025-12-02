@@ -1,0 +1,157 @@
+<div class="menu-page">
+  <!-- Top toolbar -->
+  <mat-toolbar class="menu-toolbar">
+    <span class="toolbar-title">{{ restaurantName }}</span>
+
+    <button mat-icon-button>
+      <mat-icon>favorite_border</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div class="menu-content">
+    <!-- Restaurant header card -->
+    <mat-card class="restaurant-card">
+      <div class="restaurant-info">
+        <div class="restaurant-main">
+          <h1>{{ restaurantName }}</h1>
+          <div class="restaurant-meta">
+            <span>{{ restaurantCategory }}</span>
+            <span>•</span>
+            <span>{{ restaurantEta }}</span>
+          </div>
+        </div>
+
+        <div class="restaurant-rating">
+          <div class="rating-value">
+            <mat-icon>star</mat-icon>
+            <span>{{ restaurantRating }}</span>
+          </div>
+          <div class="rating-sub">{{ restaurantReviews }} ratings</div>
+        </div>
+      </div>
+
+      <div class="restaurant-footer">
+        <div class="tag-pill">
+          <mat-icon>delivery_dining</mat-icon>
+          <span>Delivery</span>
+        </div>
+        <div class="tag-pill">
+          <mat-icon>schedule</mat-icon>
+          <span>{{ restaurantEta }}</span>
+        </div>
+      </div>
+    </mat-card>
+
+    <!-- Menu sections -->
+    <div class="menu-sections">
+      <div class="menu-section" *ngFor="let category of categories">
+        <h2 class="section-title">{{ category }}</h2>
+
+        <div
+          class="menu-item-card"
+          *ngFor="let item of getItemsByCategory(category); let i = index"
+        >
+          <!-- Left image/placeholder -->
+          <div class="item-image">
+            <div class="img-placeholder">
+              <mat-icon>lunch_dining</mat-icon>
+            </div>
+            <div *ngIf="item.badge" class="image-badge">
+              {{ item.badge }}
+            </div>
+          </div>
+
+          <!-- Right content -->
+          <div class="item-content">
+            <div class="item-text">
+              <div class="item-name">{{ item.name }}</div>
+              <div class="item-description">
+                {{ item.description }}
+              </div>
+              <div class="item-price">
+                ${{ item.price | number : '1.2-2' }}
+              </div>
+            </div>
+
+            <div class="item-actions">
+              <div class="qty-control" *ngIf="item.qty > 0">
+                <button mat-mini-fab (click)="decrement(item)">
+                  <mat-icon>remove</mat-icon>
+                </button>
+
+                <span class="qty-value">{{ item.qty }}</span>
+
+                <button mat-mini-fab (click)="increment(item)">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+
+              <button
+                *ngIf="item.qty === 0"
+                mat-stroked-button
+                class="add-btn"
+                (click)="increment(item)"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <mat-divider></mat-divider>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order summary popup -->
+  <mat-card class="cart-summary" *ngIf="isSummaryOpen">
+    <h2 class="summary-title">Order summary</h2>
+
+    <div class="summary-items">
+      <div class="summary-item" *ngFor="let item of cartItems">
+        <div class="summary-item-main">
+          <div class="summary-item-name">{{ item.name }}</div>
+          <div class="summary-item-qty-price">
+            x{{ item.qty }} · ${{ item.price | number : '1.2-2' }}
+          </div>
+        </div>
+        <div class="summary-item-total">
+          ${{ (item.qty * item.price) | number : '1.2-2' }}
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-total-row">
+      <span>Total</span>
+      <span class="summary-total-amount">
+        ${{ subtotal | number : '1.2-2' }}
+      </span>
+    </div>
+
+    <div class="summary-actions">
+      <button mat-stroked-button (click)="isSummaryOpen = false">
+        Back
+      </button>
+      <button mat-flat-button color="primary" (click)="placeOrder()">
+        Place order
+      </button>
+    </div>
+  </mat-card>
+
+  <!-- Bottom sticky cart bar -->
+  <div class="cart-bar" *ngIf="totalItems > 0">
+    <div class="cart-info">
+      <div class="cart-items">
+        {{ totalItems }} item{{ totalItems > 1 ? 's' : '' }}
+      </div>
+      <div class="cart-subtotal">
+        Subtotal: ${{ subtotal | number : '1.2-2' }}
+      </div>
+    </div>
+
+    <button mat-flat-button class="cart-button" (click)="openSummary()">
+      View cart
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </div>
+</div>
