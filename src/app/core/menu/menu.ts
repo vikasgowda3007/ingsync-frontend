@@ -28,4 +28,10 @@ export class Menu {
       queryParams: { typeName: 'ingredients' }
     });
   }
+
+  navigateToDistributorList() {
+    // Logic to navigate to the distributor list page
+    // For example, you might use Angular Router to navigate
+    this.router.navigate(['/resta-list']);
+  }
 }
