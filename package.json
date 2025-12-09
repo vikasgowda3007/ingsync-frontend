@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:ingsync": "node dist/ingsync/server/server.mjs",
-    "deploy": "npm run build && cp dist/ingsync/browser/index.html dist/ingsync/browser/404.html && ng deploy"
+    "copy-404": "cp dist/ingsync/browser/index.csr.html dist/ingsync/browser/404.html", 
+    "deploy": "npm run build && npm run copy-404 && ng deploy"
   },
   "prettier": {
     "printWidth": 100,
