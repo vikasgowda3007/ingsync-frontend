@@ -40,7 +40,6 @@
           },
           "configurations": {
             "production": {
-              "outputPath": "dist/ingsync", // <-- FIX 1: Added for deploy tool compatibility
               "budgets": [
                 {
                   "type": "initial",
@@ -80,13 +79,6 @@
             }
           },
           "defaultConfiguration": "development"
-        },
-        "deploy": {
-          "builder": "angular-cli-ghpages:deploy",
-          "options": {
-            "baseHref": "/ingsync-frontend/",
-            "outputPath": "dist/ingsync/browser"
-          }
         },
         "test": {
           "builder": "@angular/build:unit-test"
