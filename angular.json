@@ -80,6 +80,12 @@
           },
           "defaultConfiguration": "development"
         },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/ingsync-frontend/"
+          }
+        },
         "test": {
           "builder": "@angular/build:unit-test"
         }
