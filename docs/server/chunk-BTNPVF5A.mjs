@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+import{Ea as o,Ta as a,Ua as n,nb as r,wc as i,xc as s}from"./chunk-A3KBYGAI.mjs";var l=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=o({type:t,selectors:[["header-component"]],decls:3,vars:0,consts:[[1,"toolbar-title"]],template:function(e,p){e&1&&(a(0,"mat-toolbar")(1,"span",0),r(2,"INGSYNC"),n()())},dependencies:[s,i],styles:[".toolbar-title[_ngcontent-%COMP%]{font-size:48px;font-weight:600;margin:0 auto}"]})};export{l as a};
