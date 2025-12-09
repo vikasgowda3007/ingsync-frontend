@@ -83,7 +83,8 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "/ingsync-frontend/"
+            "baseHref": "/ingsync-frontend/",
+            "outputPath": "dist/ingsync/browser"
           }
         },
         "test": {
