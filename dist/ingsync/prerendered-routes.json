@@ -1,0 +1,8 @@
+{
+  "routes": {
+    "/ingsync-frontend/ingredients-view": {},
+    "/ingsync-frontend/menu": {},
+    "/ingsync-frontend/restaurant-list": {},
+    "/ingsync-frontend/restaurant-menu": {}
+  }
+}
