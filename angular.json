@@ -54,6 +54,13 @@
               ],
               "outputHashing": "all"
             },
+            "github-pages": {
+                "budgets": [
+                ],
+                "outputHashing": "all",
+                "outputMode": "static",
+                "outputPath": "docs"
+            },
             "development": {
               "optimization": false,
               "extractLicenses": false,
